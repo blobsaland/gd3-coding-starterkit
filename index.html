@@ -10,29 +10,25 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+<form id="info">
+  <div class="form-control">
+    <label for="name">Full Name</label>
+    <input id="name" name="name" type="text" />
+</div>
 
-  Name:
-  <input type="text" name="name">
-  <br>
-  
-  Artist:
-  <input type="text" name="artist">
-  <br>
+<div class="form-control">
+  <label for="artistName">Artist Name</label>
+  <input id="artistName" name="artistName" type="text" />
+</div>
 
-  Color:
-  <input type="radio" name="Color" value="blue">blue
-  <input type="radio" name="Color" value="red">red
-  <input type="radio" name="Color" value="green">green
-  <br>
-  
-  Food Preference:
-  <input type="radio" name="Food" value="Vegetarian">Vegetarian
-  <input type="radio" name="Food" value="Non-Vegetarian">Non-Vegetarian
-  <br>
-  
-<button type="button" id="sumbmitButton">
-    Submit
-</button>
+<div class="form-control">
+  <label for="Food">Vegetarian?</label>
+  <input id="Food" type="radio" name="Food" value="Vegetarian">Vegetarian
+  <input id="Food" type="radio" name="Food" value="Non-Vegetarian">Non-Vegetarian
+</div>
+<button class="btn" type="submit">Send</button>
+
+</form>
 
     <script type="module" src="assets/js/index.js"></script>
     <script type="module" src="assets/js/p5.min.js"></script>
