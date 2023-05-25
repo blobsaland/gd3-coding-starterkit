@@ -1,3 +1,118 @@
+* {
+  --pink: #FF8FFF;
+  --red: #FF0047;
+  --green: #0E443D;
+  --purple: #7F40E0;
+  --black: #110E09;
+
+  --lineHeight: 22px;
+}
+
 body {
-  font-family: "ABCRepro-Medium", Helvetica, Arial, sans-serif;
+  font-family: "bd-supper", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--purple);
+  background-color: var(--pink);
+  font-size: 18px;
+  line-height: var(--lineHeight);
+}
+
+main{
+  max-width: 400px;
+  /* height: 100%; */
+  border-image-source: url("/assets/images/border.png");
+  border-image-width: calc(var(--lineHeight)*1);
+  border-image-slice: 25%;
+  border-image-repeat: round;
+  background-color: var(--black);
+  padding: calc(var(--lineHeight)*2);
+  overflow: scroll;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.p5Canvas{
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+h1{
+  font-size: 3.8em;
+  line-height: calc(var(--lineHeight)*2.5);
+  color: #FF0047;
+}
+
+p{
+  font-size: 1.25em;
+    line-height: calc(var(--lineHeight)*1);
+}
+
+input[type=text] {
+  width: 100%;
+  height: calc(var(--lineHeight)*2);
+  padding: calc(var(--lineHeight)*0.5);
+  margin-bottom: calc(var(--lineHeight)*1);
+  border: none; 
+  border-radius: calc(var(--lineHeight)*0.6);
+  background-color: var(--green);
+  color: var(--pink);
+  text-align: center;
+  font-size: 1.5em;
+  font-family: "bd-supper", sans-serif;
+  font-weight: 400;
+  outline: none;
+  transition: 0.2s;
+  font-style: normal;
+}
+
+input[type=text]:focus {
+  background-color: var(--purple);
+
+}
+.checkbox {
+  display: none;
+}
+
+.checkbox-label {
+  display: inline-block;
+  background-color: var(--green);
+  width: 100%;
+  font-size: 1.5em;
+  height: calc(var(--lineHeight)*2);
+  padding: calc(var(--lineHeight)*0.5);
+  border-radius: calc(var(--lineHeight)*0.6);
+  color: var(--pink);
+  transition: 0.2s;
+  margin-top: calc(var(--lineHeight)*0.5);
+  text-align: center;
+}
+
+:checked + .checkbox-label {
+  background-color: var(--red);
+}
+
+.button {
+  background-color: var(--purple);
+  border: none;
+  border-radius: 100%;
+  width: calc(var(--lineHeight)*4);
+  height: calc(var(--lineHeight)*4);;
+  padding: calc(var(--lineHeight)*1);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+  transition: 0.2s;
+  margin-top: calc(var(--lineHeight)*1);
+}
+
+.button:active {
+  background-color: var(--red);
+  transform: translate(-50%,0) scale(1.05,1.05);
+
 }
