@@ -21,7 +21,7 @@ body {
 main{
   max-width: 400px;
   /* height: 100%; */
-  border-image-source: url("/assets/images/border.png");
+  border-image-source: url("../../assets/images/border.png");
   border-image-width: calc(var(--lineHeight)*1);
   border-image-slice: 25%;
   border-image-repeat: round;
