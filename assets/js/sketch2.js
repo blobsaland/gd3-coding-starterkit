@@ -39,8 +39,8 @@ function touchStarted(event) {
 }
 
 function touchEnded(event) {
-  x2 = mouseX
-  y2 = mouseY
+  x2 = mouseX;
+  y2 = mouseY;
   if (x2 - x1 >= 10 || y2 - y1 >= 10) {
     if (loadBrushImage) {
       drawLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
@@ -50,8 +50,8 @@ function touchEnded(event) {
 
 function touchMoved() {
   prevLayer.clear()
-  x2 = mouseX
-  y2 = mouseY
+  x2 = mouseX;
+  y2 = mouseY;
   console.log(x2, y2)
   if (x2 - x1 >= 10 || y2 - y1 >= 10) {
     if (loadBrushImage) {

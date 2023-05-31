@@ -16,6 +16,9 @@ body {
   background-color: var(--pink);
   font-size: 18px;
   line-height: var(--lineHeight);
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 main{
@@ -130,8 +133,6 @@ input[type=text]:focus {
   white-space: nowrap;
   z-index: 1;
   max-width: 400px;
-
-
 }
 
 .imageSelector{
@@ -143,4 +144,14 @@ input[type=text]:focus {
 
 .imageSelector:hover{
   scale: 115%;
+}
+
+@media screen and (max-device-width:500px), screen and (max-width:500px) {
+  #imageSelectorContainer {
+    width: 100vw;
+  }
+
+  main{
+    max-width: 100vw;  
+}
 }

@@ -192,10 +192,9 @@ function loadimgs(formDataObj) {
 
   imageSelector.forEach((item, i) => {
     item.addEventListener('click', (event) => {
-    
-    imgBrush[0] = loadImage(item.src, loadBrushImage())
 
-      // console.log(item.src)
+      imgBrush[0] = loadImage(item.src, loadBrushImage())
+      reset();
     })
   })
 }
