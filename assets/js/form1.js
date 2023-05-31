@@ -21,7 +21,7 @@ form1.addEventListener('submit', function (event) {
   //hide and show next part
     document.getElementById("step1").style.display = "none"
     document.getElementById("defaultCanvas0").style.display = "block"
-    document.getElementById("step2").style.display = "block"
+    // document.getElementById("step2").style.display = "block"
 
     console.log("artistName: "+formDataObj.artistName)
     console.log("subjectName: "+formDataObj.subjectName)

@@ -5,6 +5,9 @@ let x1, x2, y1, y2 = 0
 let canvasSizeWidth
 let canvasSizeHeight;
 
+let capture;
+let liveCapture = "on";
+
 function windowResized() {
   canvasSizeWidth = main.offsetWidth;
   canvasSizeHeight = windowHeight;
@@ -13,8 +16,13 @@ function windowResized() {
 
 function setup() {
   windowResized()
-  
+
   capture = createCapture(VIDEO);
+  capture.hide();
+
+  photo = createGraphics(windowWidth, windowHeight);
+
+
   createCanvas(canvasSizeWidth, canvasSizeHeight);
   drawLayer = createGraphics(windowWidth, windowHeight);
   prevLayer = createGraphics(windowWidth, windowHeight);
@@ -23,7 +31,25 @@ function setup() {
 }
 
 function draw() {
-  background(0)
+  // background(0)
+  if (liveCapture === "on"){
+    image(
+    capture,
+    0,
+    0,
+    width,
+    height,
+    0,
+    0,
+    capture.width,
+    capture.height,
+    COVER,
+    CENTER
+  );
+  }else if(liveCapture === "off"){
+    image(photo,0,0)
+  }
+
   image(drawLayer, 0, 0);
   image(prevLayer, 0, 0);
 }
