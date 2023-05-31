@@ -164,10 +164,10 @@ form2.addEventListener('submit', function (event) {
   myFormData.forEach((value, key) => (formDataObj[key] = value));
 
   loadimgs(formDataObj)
-  document.getElementById("step2").style.display = "none"
+  document.getElementById("step2").classList.add("hidden")
   document.getElementById("imageSelectorContainer").style.display = "block"
   document.getElementById("defaultCanvas0").style.display = "block"
-
+  step = 3;
 });
 
 
@@ -194,7 +194,6 @@ function loadimgs(formDataObj) {
     item.addEventListener('click', (event) => {
 
       imgBrush[0] = loadImage(item.src, loadBrushImage())
-      drawLayer.reset();
     })
   })
 }

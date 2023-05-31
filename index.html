@@ -18,9 +18,9 @@
 <body>
   <main id="main">
 
-    <div id="step1">
+    <div id="step0">
       <h1>PORTRET<br>INFO</h1>
-      <p class="topText">Fill in the portret information.</p>
+      <p class="topText">FILL IN THE PORTRET INFORMATION</p>
       <form id="form1">
         <div class="form-control">
           <label for="artistName">Name of the Artist</label>
@@ -32,13 +32,23 @@
           <input id="subjectName" name="subjectName" type="text" />
         </div>
 
-        <button class="button" type="submit">
+        <button class="button down" type="submit">
           <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124.54 120.24"><defs><style>.cls-1{stroke-miterlimit:10;}.cls-1,.cls-2{fill:none;stroke:#ff8fff;stroke-width:17px;}.cls-2{stroke-linecap:square;stroke-linejoin:round;}</style></defs><line class="cls-1" x1="115.87" y1="59.4" x2="1" y2="59.4"/><polyline class="cls-2" points="65.97 108.38 115.87 59.4 65.97 12.44"/></svg>
         </button>
       </form>
     </div>
 
-    <div id="step2">
+    <div id="step1" class="hidden">
+      <h1>Step 1</h1>
+      <p class="topText">TAKE A PHOTO</p>
+
+      <button class="button down" onclick="takePhoto()">
+        <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124.54 120.24"><defs><style>.cls-1{fill:#ff8fff;}</style></defs><g id="Layer_1-2"><path class="cls-1" d="m62.27,17c24.96,0,45.27,19.34,45.27,43.12s-20.31,43.12-45.27,43.12-45.27-19.34-45.27-43.12S37.31,17,62.27,17m0-17C27.88,0,0,26.92,0,60.12s27.88,60.12,62.27,60.12,62.27-26.92,62.27-60.12S96.66,0,62.27,0h0Z"/></g></svg>
+      </button>
+    </div>
+
+
+    <div id="step2"class="hidden">
         <h1>STEP 2</h1>
         <p class="topText">SELECT CHARACTER TRAITS, YOU WOULD HAVE ATTRIBUTED TO THE OTHER PERSON WHEN YOU FIRST MET THEM?</p>
         <form id="form2">

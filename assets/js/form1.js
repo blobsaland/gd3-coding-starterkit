@@ -19,9 +19,9 @@ form1.addEventListener('submit', function (event) {
     alert("subject Name must be filled out");
   }else{
   //hide and show next part
-    document.getElementById("step1").style.display = "none"
+    document.getElementById("step0").classList.add("hidden")
     document.getElementById("defaultCanvas0").style.display = "block"
-    // document.getElementById("step2").style.display = "block"
+    document.getElementById("step1").classList.remove("hidden")
 
     console.log("artistName: "+formDataObj.artistName)
     console.log("subjectName: "+formDataObj.subjectName)

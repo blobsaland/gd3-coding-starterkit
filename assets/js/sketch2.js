@@ -30,24 +30,38 @@ function setup() {
   imgBrush[0] = loadImage("./assets/images/building/basic.jpg", loadBrushImage())
 }
 
+function takePhoto() {
+  liveCapture = "off"
+
+  setTimeout(
+    function () {
+      document.getElementById("step1").classList.add("hidden")
+      document.getElementById("defaultCanvas0").style.display = "none"
+      document.getElementById("step2").classList.remove("hidden")
+      step = 2
+    }, 1000);
+
+}
+
 function draw() {
-  // background(0)
-  if (liveCapture === "on"){
+  prevLayer.clear()
+
+  if (liveCapture === "on") {
     image(
-    capture,
-    0,
-    0,
-    width,
-    height,
-    0,
-    0,
-    capture.width,
-    capture.height,
-    COVER,
-    CENTER
-  );
-  }else if(liveCapture === "off"){
-    image(photo,0,0)
+      capture,
+      0,
+      0,
+      width,
+      height,
+      0,
+      0,
+      capture.width,
+      capture.height,
+      COVER,
+      CENTER
+    );
+  } else if (liveCapture === "off") {
+    image(photo, 0, 0)
   }
 
   image(drawLayer, 0, 0);
@@ -66,22 +80,26 @@ function touchStarted(event) {
 function touchEnded(event) {
   x2 = mouseX;
   y2 = mouseY;
-  if (x2 - x1 >= 10 || y2 - y1 >= 10) {
-    if (loadBrushImage) {
-      drawLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
-    }
-  };
+
+  if (step === 3) {
+    if (x2 - x1 >= 10 || y2 - y1 >= 10) {
+      if (loadBrushImage) {
+        drawLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+      }
+    };
+  }
+
 }
 
 function touchMoved() {
-  prevLayer.clear()
   x2 = mouseX;
   y2 = mouseY;
-  console.log(x2, y2)
-  if (x2 - x1 >= 10 || y2 - y1 >= 10) {
-    if (loadBrushImage) {
-      prevLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+  if (step === 3) {
+    if (x2 - x1 >= 10 || y2 - y1 >= 10) {
+      if (loadBrushImage) {
+      console.log("e")
+        prevLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+      }
     }
-
   };
 }

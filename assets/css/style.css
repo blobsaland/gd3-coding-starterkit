@@ -21,8 +21,16 @@ body {
   user-select: none; /* Standard syntax */
 }
 
-#step2{
+.hidden{
   display: none;
+}
+
+#step1{
+  position: relative;
+  z-index: 1;
+}
+#step2{
+  /* display: none; */
 }
 
 main{
@@ -95,6 +103,7 @@ label {
   font-size: 1.25em;
 }
 
+
 .checkbox-label {
   display: inline-block;
   background-color: var(--green);
@@ -129,6 +138,12 @@ label {
   transition: 0.2s;
   margin-top: calc(var(--lineHeight)*1);
 }
+
+.button.down{
+  position: fixed;
+  bottom: calc(var(--lineHeight)*2);
+}
+
 
 .button:active {
   background-color: var(--red);
