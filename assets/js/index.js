@@ -134,9 +134,13 @@ let imgs = [
     // },
   
 ];
-const imagesSelector = document.getElementById('imageSelectorContainer');
+const imageSelectorContainer = document.getElementById('imageSelectorContainer');
 const form = document.getElementById('form');
 const checkboxes = document.getElementById('checkboxes');
+
+let imageSelector
+
+
 
 
 //create checkboxes
@@ -154,7 +158,6 @@ for (let i = 0; i < imgs.length; i++) {
     checkboxDiv.innerHTML = 
     '<input class="checkbox" id="'+ Cname +'" name="'+ Cname +'" type="checkbox"/><label class="checkbox-label" for="'+ Cname +'">'+ Cname +'</label>'  
 }
-
 
 //button submit
 form.addEventListener('submit', function(event) {
@@ -174,10 +177,13 @@ form.addEventListener('submit', function(event) {
 
 });
 
+
+
+
 //load images
 function loadimgs(formDataObj){
   for (let i = 0; i < imgs.length; i++) {
-    console.log(formDataObj[imgs[i].name]);
+    // console.log(formDataObj[imgs[i].name]);
     
     if(!(formDataObj[imgs[i].name] === undefined)){
       console.log("load img: "+imgs[i].name, +"source: "+imgs[i].imgSource)
@@ -185,14 +191,22 @@ function loadimgs(formDataObj){
       let createimg = document.createElement('img');
       createimg.src = imgs[i].imgSource;
       createimg.classList = "imageSelector"
-      createimg.setAttribute("onclick","imageSelectorClick();");
-
       imageSelectorContainer.appendChild(createimg);
+
+      imageSelector = document.querySelectorAll(".imageSelector")
 
     }
   }
 }
 
-function imageSelectorClick(event){
-console.log(event)
-}
+imageSelector.forEach((item,i) => {
+  item.addEventListener('click', (event) => {
+    // console.log(item.children[1])
+    console.log(event)
+
+
+    // item.children[1].classList.toggle("clicked")
+
+    // item.children[1].style.height = "140px"
+  })
+})
