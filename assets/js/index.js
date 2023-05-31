@@ -194,7 +194,7 @@ function loadimgs(formDataObj) {
     item.addEventListener('click', (event) => {
 
       imgBrush[0] = loadImage(item.src, loadBrushImage())
-      reset();
+      drawLayer.reset();
     })
   })
 }
