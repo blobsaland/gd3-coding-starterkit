@@ -139,9 +139,6 @@ const checkboxes = document.getElementById('checkboxes');
 
 let imageSelector = document.getElementsByClassName("imageSelector")
 
-
-
-
 //create checkboxes
 for (let i = 0; i < imgs.length; i++) {
 
@@ -169,9 +166,12 @@ form.addEventListener('submit', function (event) {
   loadimgs(formDataObj)
   document.getElementById("step2").style.display = "none"
   document.getElementById("imageSelectorContainer").style.display = "block"
-  // document.getElementById("defaultCanvas0").style.display = "block"
+  document.getElementById("defaultCanvas0").style.display = "block"
 
 });
+
+
+let imgBrush = [];
 
 //load images
 function loadimgs(formDataObj) {
@@ -192,8 +192,10 @@ function loadimgs(formDataObj) {
 
   imageSelector.forEach((item, i) => {
     item.addEventListener('click', (event) => {
-      console.log(item.src)
+    
+    imgBrush[0] = loadImage(item.src, loadBrushImage())
+
+      // console.log(item.src)
     })
   })
 }
-
