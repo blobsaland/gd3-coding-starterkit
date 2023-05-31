@@ -134,7 +134,7 @@ let imgs = [{
 
 ];
 const imageSelectorContainer = document.getElementById('imageSelectorContainer');
-const form = document.getElementById('form');
+const form2 = document.getElementById('form2');
 const checkboxes = document.getElementById('checkboxes');
 
 let imageSelector = document.getElementsByClassName("imageSelector")
@@ -156,7 +156,7 @@ for (let i = 0; i < imgs.length; i++) {
 }
 
 //button submit
-form.addEventListener('submit', function (event) {
+form2.addEventListener('submit', function (event) {
   event.preventDefault();
   const myFormData = new FormData(event.target);
 
@@ -178,18 +178,18 @@ function loadimgs(formDataObj) {
   for (let i = 0; i < imgs.length; i++) {
     // console.log(formDataObj[imgs[i].name]);
 
+    //check if images are clicked
     if (!(formDataObj[imgs[i].name] === undefined)) {
       console.log("load img: " + imgs[i].name, +"source: " + imgs[i].imgSource)
-
+      //create images
       let createimg = document.createElement('img');
       createimg.src = imgs[i].imgSource;
       createimg.classList = "imageSelector"
       imageSelectorContainer.appendChild(createimg);
-
-
     }
   }
 
+  //click event
   imageSelector.forEach((item, i) => {
     item.addEventListener('click', (event) => {
 

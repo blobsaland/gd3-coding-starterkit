@@ -21,6 +21,10 @@ body {
   user-select: none; /* Standard syntax */
 }
 
+#step2{
+  display: none;
+}
+
 main{
   min-height: 100vh;
   max-width: 400px;
@@ -52,7 +56,13 @@ h1{
 
 p{
   font-size: 1.25em;
-    line-height: calc(var(--lineHeight)*1);
+  line-height: calc(var(--lineHeight)*1);
+}
+
+.topText{
+  margin-bottom:  calc(var(--lineHeight)*1);  ;
+  margin-top:  calc(var(--lineHeight)*0.5);  ;
+
 }
 
 input[type=text] {
@@ -79,6 +89,10 @@ input[type=text]:focus {
 }
 .checkbox {
   display: none;
+}
+
+label {
+  font-size: 1.25em;
 }
 
 .checkbox-label {

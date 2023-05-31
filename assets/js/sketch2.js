@@ -13,7 +13,8 @@ function windowResized() {
 
 function setup() {
   windowResized()
-
+  
+  capture = createCapture(VIDEO);
   createCanvas(canvasSizeWidth, canvasSizeHeight);
   drawLayer = createGraphics(windowWidth, windowHeight);
   prevLayer = createGraphics(windowWidth, windowHeight);
@@ -22,8 +23,6 @@ function setup() {
 }
 
 function draw() {
-  // background(100)
-  // image(imgBrush[0],0,0)
   background(0)
   image(drawLayer, 0, 0);
   image(prevLayer, 0, 0);
