@@ -4,11 +4,6 @@ let imgs = [{
     imgSource: "assets/images/building/basic.jpg"
   },
   {
-    name: "Broken",
-    type: "checkbox",
-    imgSource: "assets/images/building/broken.png"
-  },
-  {
     name: "Casual",
     type: "checkbox",
     imgSource: "assets/images/building/casual.jpg"
@@ -74,6 +69,11 @@ let imgs = [{
     imgSource: "assets/images/building/old fashioned.png"
   },
   {
+    name: "Open",
+    type: "checkbox",
+    imgSource: "assets/images/building/open.png"
+  },
+  {
     name: "Outgoing",
     type: "checkbox",
     imgSource: "assets/images/building/outgoing.png"
@@ -116,7 +116,7 @@ let imgs = [{
   {
     name: "Steadfast",
     type: "checkbox",
-    imgSource: "assets/images/building/Steadfast.jpg"
+    imgSource: "assets/images/building/steadfast.jpg"
   },
   {
     name: "Strong",
