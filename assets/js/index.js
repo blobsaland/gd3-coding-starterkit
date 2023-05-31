@@ -138,7 +138,7 @@ const imageSelectorContainer = document.getElementById('imageSelectorContainer')
 const form = document.getElementById('form');
 const checkboxes = document.getElementById('checkboxes');
 
-let imageSelector
+let imageSelector = document.querySelectorAll(".imageSelector")
 
 
 
@@ -172,12 +172,9 @@ form.addEventListener('submit', function(event) {
 
   document.getElementById("step2").style.display = "none"
   document.getElementById("imageSelectorContainer").style.display = "block"
-
   document.getElementById("defaultCanvas0").style.display = "block"
 
 });
-
-
 
 
 //load images
