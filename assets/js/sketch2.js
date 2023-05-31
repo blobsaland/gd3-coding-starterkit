@@ -41,7 +41,8 @@ function touchStarted(event) {
 function touchEnded(event) {
   x2 = mouseX
   y2 = mouseY
-  drawLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+  if(loadBrushImage){drawLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+  }
 }
 
 function touchMoved() {
@@ -50,7 +51,8 @@ function touchMoved() {
   y2 = mouseY
   console.log(x2, y2)
   if (!(x1 - x2 === 0 || y1 - y2 === 0)) {
-    prevLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+    if(loadBrushImage){prevLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
+    }
 
   };
 }
