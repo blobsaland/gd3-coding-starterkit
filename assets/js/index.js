@@ -133,10 +133,11 @@ let imgs = [
     //   imgSource: "assets/images/building/dull.png"
     // },
   
-  ];
-const imagesSelector = document.getElementById('imagesSelector');
+];
+const imagesSelector = document.getElementById('imageSelectorContainer');
 const form = document.getElementById('form');
 const checkboxes = document.getElementById('checkboxes');
+
 
 //create checkboxes
 for (let i = 0; i < imgs.length; i++) {
@@ -159,30 +160,39 @@ for (let i = 0; i < imgs.length; i++) {
 form.addEventListener('submit', function(event) {
   event.preventDefault();
   const myFormData = new FormData(event.target);
-  // console.log(event)
 
   const formDataObj = {};
   myFormData.forEach((value, key) => (formDataObj[key] = value));
   console.log(formDataObj);
 
   loadimgs(formDataObj)
+
+  document.getElementById("step2").style.display = "none"
+  document.getElementById("imageSelectorContainer").style.display = "block"
+
+  document.getElementById("defaultCanvas0").style.display = "block"
+
 });
 
 //load images
 function loadimgs(formDataObj){
   for (let i = 0; i < imgs.length; i++) {
-    // console.log(formDataObj[imgs[i].name]);
-    // if(!(formDataObj[imgs[i].name] === undefined)){
+    console.log(formDataObj[imgs[i].name]);
+    
+    if(!(formDataObj[imgs[i].name] === undefined)){
       console.log("load img: "+imgs[i].name, +"source: "+imgs[i].imgSource)
       
       let createimg = document.createElement('img');
-      
-      // createimg.src ="assets/images/building/basic.jpg"
-      createimg.src = imgs[i].imgSource
+      createimg.src = imgs[i].imgSource;
+      createimg.classList = "imageSelector"
+      createimg.setAttribute("onclick","imageSelectorClick();");
 
-      imagesSelector.appendChild(createimg);
+      imageSelectorContainer.appendChild(createimg);
 
-
-    // }
+    }
   }
+}
+
+function imageSelectorClick(event){
+console.log(event)
 }

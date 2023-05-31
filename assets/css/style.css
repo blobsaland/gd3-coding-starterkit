@@ -19,6 +19,7 @@ body {
 }
 
 main{
+  min-height: 100vh;
   max-width: 400px;
   /* height: 100%; */
   border-image-source: url("../../assets/images/border.png");
@@ -34,9 +35,10 @@ main{
 }
 
 .p5Canvas{
-  width: 100%;
   position: absolute;
   left: 0;
+  top: 0;
+  display: none;
 }
 
 h1{
@@ -115,4 +117,28 @@ input[type=text]:focus {
   background-color: var(--red);
   transform: translate(-50%,0) scale(1.05,1.05);
 
+}
+
+#imageSelectorContainer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: calc(var(--lineHeight)*6);
+  display: none;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  z-index: 1;
+
+}
+
+.imageSelector{
+  padding: calc(var(--lineHeight)*1);;
+  height: calc(var(--lineHeight)*6);
+  max-width: calc(var(--lineHeight)*8);
+  transition: 0.2s ease-in-out;
+}
+
+.imageSelector:hover{
+  scale: 115%;
 }
