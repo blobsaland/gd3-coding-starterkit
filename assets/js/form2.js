@@ -165,7 +165,9 @@ form2.addEventListener('submit', function (event) {
 
   loadimgs(formDataObj)
   document.getElementById("step2").classList.add("hidden")
-  document.getElementById("imageSelectorContainer").style.display = "block"
+  document.getElementById("step3").classList.remove("hidden")
+
+  // document.getElementById("imageSelectorContainer").style.display = "block"
   document.getElementById("defaultCanvas0").style.display = "block"
   step = 3;
 });

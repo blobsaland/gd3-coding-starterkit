@@ -29,8 +29,9 @@ body {
   position: relative;
   z-index: 1;
 }
-#step2{
-  /* display: none; */
+#step3{
+  position: relative;
+  z-index: 1;
 }
 
 main{
@@ -150,13 +151,22 @@ label {
   transform: translate(-50%,0) scale(1.05,1.05);
 
 }
+.button.small{
+    width: calc(var(--lineHeight)*3);
+    height: calc(var(--lineHeight)*3);
+    padding: calc(var(--lineHeight)*0.5);
+    left: 0;
+    transform: translate(0,0);
+    transition: 0.2s;
+    margin-top: 0;
+}
 
 #imageSelectorContainer {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   left: 0px;
   height: calc(var(--lineHeight)*6);
-  display: none;
+  /* display: none; */
   overflow-y: hidden;
   overflow-x: scroll;
   white-space: nowrap;
