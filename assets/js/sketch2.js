@@ -26,6 +26,8 @@ function setup() {
   createCanvas(canvasSizeWidth, canvasSizeHeight);
   drawLayer = createGraphics(windowWidth, windowHeight);
   prevLayer = createGraphics(windowWidth, windowHeight);
+  let saveCanvasCanvas = createGraphics(windowWidth, windowHeight);
+
 
   imgBrush[0] = loadImage("./assets/images/building/basic.jpg", loadBrushImage())
 }
@@ -44,7 +46,6 @@ function takePhoto() {
 }
 
 function draw() {
-  prevLayer.clear()
 
   if (liveCapture === "on") {
     image(
@@ -65,6 +66,8 @@ function draw() {
   }
 
   image(drawLayer, 0, 0);
+  prevLayer.clear()
+
   image(prevLayer, 0, 0);
 }
 
@@ -92,14 +95,22 @@ function touchEnded(event) {
 }
 
 function touchMoved() {
+  // prevLayer.clear()
+
   x2 = mouseX;
   y2 = mouseY;
   if (step === 3) {
     if (x2 - x1 >= 10 || y2 - y1 >= 10) {
       if (loadBrushImage) {
-      console.log("e")
         prevLayer.image(imgBrush[0], x1, y1, x2 - x1, y2 - y1);
       }
     }
   };
+}
+
+function saveCanvas() {
+  saveCanvasCanvas.image(photo, 0, 0)
+  saveCanvasCanvas.image(drawLayer, 0, 0);
+  saveCanvas(saveCanvasCanvas, subjectName+ " made by " + artistName, 'jpg');
+
 }
